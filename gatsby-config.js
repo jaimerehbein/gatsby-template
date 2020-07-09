@@ -1,17 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Node.js (TypeScript) API',
+    title: "Gatsby + Node.js (TypeScript) API"
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-source-graphql",
       options: {
-        name: 'Gatsby + Node.js (TypeScript) API',
-        short_name: 'Gatsby + Node.js (TypeScript)',
-        start_url: '/',
-        icon: 'src/images/gatsby-icon.png',
-      },
-    },
-  ],
+        // Arbitrary name for the remote schema Query type
+        typeName: "GRAPHCMS",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "GraphCmsData",
+        // Url to query from
+        url:
+          "https://api-us-east-1.graphcms.com/v2/ckce5oe0t699j01xr9tyh6xx6/master"
+      }
+    }
+  ]
 };
